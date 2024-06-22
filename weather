@@ -1,0 +1,30 @@
+[HTTP/1.1]
+301=Moved Permanently
+404=Not Found
+
+[Date:]
+Sat,=25 May 2024 15:39:41 GMT
+
+[Content-Type:]
+text/html;=charset=utf-8
+
+[<HTML><HEAD><meta]
+http-equiv="content-type"=content="text/html;charset=utf-8">
+
+[The]
+document=has moved
+
+[HTTP/1.0]
+400=Bad Request
+
+[Client]
+sent=an HTTP request to an HTTPS server.
+
+[<!DOCTYPE]
+HTML=PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+[<title>404]
+Not=Found</title>
+
+[<p>The]
+requested=URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
