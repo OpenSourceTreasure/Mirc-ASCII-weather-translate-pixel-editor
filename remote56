@@ -1,0 +1,31 @@
+; JSON parser script for mIRC
+alias jsonparse {
+var %file = $1
+if ($isfile(%file)) {
+tokenize 32 $read(%file,1)
+set %json $*
+}
+}
+
+alias jsonget {
+var %path = $2
+var %json = $1
+var %key = $gettok(%path,1,46)
+var %rest = $gettok(%path,2-,46)
+var %value = $remove($mid(%json,$findtok(%json,%key,1,123),$calc($len(%json) - $findtok(%json,%key,1,123) + 1)),{,},$chr(34),$chr(32))
+if (%rest != $null) {
+return $jsonget(%value,%rest)
+}
+return %value
+}
+%pixed.width 10
+%pixed.height 10
+%pixed.size 60
+%pixed.tool select
+%pixed.colour 1
+%pixed.font alienware_caret_font
+%pixed.fontsize 12
+%pixed.textcolour 36
+%pixed.bgcolour none
+%pixed.inserttext 1
+%pixed.text Ken
