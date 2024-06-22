@@ -1,3 +1,5 @@
+Where a directory refers to "kenny" instead of "name" - same idea, change it to whatever it is on your end...
+
 # irc-translate-bot
 An irc translation bot using Google Translate, works for every language.
 
