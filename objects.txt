@@ -1,0 +1,1059 @@
+game game {
+
+  desc = my game object  
+  starting_map = main
+
+  ; tile width and height, in pixel
+  tile_w = 32
+  tile_h = 32
+}
+
+map main {
+
+  desc = main map
+
+  ; map width and height, in tile
+  map_w = 200
+  map_h = 30
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; TILES SET
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+tileset mario {
+
+  desc = mario
+
+  tiles_width = 32
+  tiles_height = 32
+
+  filename = img\tiles1.png
+}
+
+player mario {
+
+  sprite = bigmario
+
+  velocity = 7
+  jump = 8.5  
+}
+
+player koopa {
+
+  sprite = koopa
+
+  velocity = 1.5
+  jump = 0
+
+  detectBorder = 1
+}
+
+player goomba {
+
+  sprite = goomba
+
+  velocity = 1.5
+  jump = 0
+}
+
+player goombafly {
+
+  sprite = goombafly
+
+  velocity = 1.5
+  jump = 6
+}
+
+player shell {
+
+  sprite = shell
+
+  velocity = 1.5
+  jump = 0
+}
+
+spritesheet mario {
+
+  file = img\mario4.png
+}
+
+spritesheet ennemies {
+
+  file = img\ennemies.png
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; SPRITES
+; RJ = Run jump
+; SS = STAND STILL
+; WJ = WALK JUMP
+; CR = CROUCH
+; BR = BRAKING
+; R0 = RUNNING (FRAME 1)
+; R1 = RUNNING (FRAME 2)
+; W0 = WALKING (FRAME 1)
+; W1 = WALKING (FRAME 2)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+sprite minimario {
+
+  W = 32
+  H = 32
+
+  sheet = mario
+
+  RJ = 147 25 16 16
+  SS = 38 25 16 16
+  WJ = 91 25 16 16
+  CR = 38 25 16 16
+  BR = 72 25 16 16
+  R0 = 110 25 16 16
+  R1 = 128 25 16 16
+  W0 = 38 25 16 16
+  W1 = 55 25 16 16
+}
+
+sprite bigmario {
+
+  W = 38
+  H = 56
+
+  sheet = mario
+
+  SS = 42 53 19 28
+  RJ = 205 53 19 28
+  WJ = 117 53 19 28
+  W0 = 60 53 19 28
+  W1 = 78 53 19 28
+  R0 = 160 53 19 28
+  R1 = 182 53 19 28
+  CR = 224 63 19 18
+  BR = 98 53 19 28
+}
+
+sprite bigmariofire {
+
+  W = 38
+  H = 56
+
+  sheet = mario
+
+  WJ = 194 90 19 28
+  RJ = 283 90 19 28
+  SS = 86 90 19 28
+  CR = 302 90 19 28
+  BR = 141 90 19 28
+  R0 = 238 90 19 28
+  R1 = 261 90 19 28
+  W0 = 103 90 19 28
+  W1 = 122 90 19 28
+}
+
+sprite koopa {
+
+  W = 32
+  H = 54
+
+  sheet = ennemies
+
+  WJ = 102 0 16 27
+  RJ = 102 0 16 27
+  SS = 102 0 16 27
+  CR = 102 0 16 27
+  BR = 102 0 16 27
+  R0 = 102 0 16 27
+  R1 = 152 0 16 27
+  W0 = 102 0 16 27
+  W1 = 152 0 16 27
+}
+
+sprite goomba {
+
+  W = 40
+  H = 34
+
+  sheet = ennemies
+
+  WJ = 0 155 20 17
+  RJ = 0 155 20 17
+  SS = 0 155 20 17
+  CR = 0 155 20 17
+  BR = 0 155 20 17
+  R0 = 0 155 20 17
+  R1 = 50 155 20 17
+  W0 = 0 155 20 17
+  W1 = 50 155 20 17
+}
+
+sprite goombafly {
+
+  W = 40
+  H = 48
+
+  sheet = ennemies
+
+  WJ = 0 102 20 24
+  RJ = 0 102 20 24
+  SS = 0 102 20 24
+  CR = 0 102 20 24
+  BR = 0 102 20 24
+  R0 = 0 102 20 24
+  R1 = 50 102 20 24
+  W0 = 0 102 20 24
+  W1 = 50 102 20 24
+}
+
+sprite shell {
+
+  W = 32
+  H = 32
+
+  sheet = ennemies
+
+  WJ = 302 106 16 16
+  RJ = 302 106 16 16
+  SS = 302 106 16 16
+  CR = 302 106 16 16
+  BR = 302 106 16 16
+  R0 = 302 106 16 16
+  R1 = 352 106 16 16
+  W0 = 302 106 16 16
+  W1 = 352 106 16 16
+}
+
+anim music1 {
+  k0 = mario.tile(8,10)
+  k1 = mario.tile(9,10)
+  k2 = mario.tile(10,10)
+  k3 = mario.tile(11,10)
+}
+
+anim blueblock {
+  k0 = mario.tile(4,10)
+  k1 = mario.tile(5,10)
+  k2 = mario.tile(6,10)
+  k3 = mario.tile(7,10)
+}
+
+anim lava {
+  k0 = mario.tile(0,10)
+  k1 = mario.tile(1,10)
+  k2 = mario.tile(2,10)
+  k3 = mario.tile(3,10)
+}
+
+anim goldblock {
+  k0 = mario.tile(20,10)
+  k1 = mario.tile(21,10)
+  k2 = mario.tile(22,10)
+  k3 = mario.tile(23,10)
+}
+
+anim coinbox {
+  k0 = mario.tile(16,10)
+  k1 = mario.tile(17,10)
+  k2 = mario.tile(18,10)
+  k3 = mario.tile(19,10)
+}
+
+anim music2 {
+  k0 = mario.tile(12,10)
+  k1 = mario.tile(13,10)
+  k2 = mario.tile(14,10)
+  k3 = mario.tile(15,10)
+}
+
+anim coin {
+  k0 = mario.tile(24,10)
+  k1 = mario.tile(25,10)
+  k2 = mario.tile(26,10)
+  k3 = mario.tile(27,10)
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; TILE MAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+tilemap green {
+  nw = mario.tile(0,4)
+  nc = mario.tile(1,4)
+  ne = mario.tile(2,4)
+  cw = mario.tile(0,5)
+  cc = mario.tile(1,5)
+  ce = mario.tile(2,5)
+  sw = mario.tile(0,6)
+  sc = mario.tile(1,6)
+  se = mario.tile(2,6)
+}
+
+tilemap white {
+  nw = mario.tile(3,4)
+  nc = mario.tile(4,4)
+  ne = mario.tile(5,4)
+  cw = mario.tile(3,5)
+  cc = mario.tile(4,5)
+  ce = mario.tile(5,5)
+  sw = mario.tile(3,6)
+  sc = mario.tile(4,6)
+  se = mario.tile(5,6)
+}
+
+tilemap orange {
+  nw = mario.tile(6,4)
+  nc = mario.tile(7,4)
+  ne = mario.tile(8,4)
+  cw = mario.tile(6,5)
+  cc = mario.tile(7,5)
+  ce = mario.tile(8,5)
+  sw = mario.tile(6,6)
+  sc = mario.tile(7,6)
+  se = mario.tile(8,6)
+}
+
+tilemap blue {
+  nw = mario.tile(9,4)
+  nc = mario.tile(10,4)
+  ne = mario.tile(11,4)
+  cw = mario.tile(9,5)
+  cc = mario.tile(10,5)
+  ce = mario.tile(11,5)
+  sw = mario.tile(9,6)
+  sc = mario.tile(10,6)
+  se = mario.tile(11,6)
+}
+
+tilemap brown {
+  nw = mario.tile(12,4)
+  nc = mario.tile(13,4)
+  ne = mario.tile(14,4)
+  cw = mario.tile(12,5)
+  cc = mario.tile(13,5)
+  ce = mario.tile(14,5)
+  sw = mario.tile(12,6)
+  sc = mario.tile(13,6)
+  se = mario.tile(14,6)
+}
+
+tilemap pink {
+  nw = mario.tile(15,4)
+  nc = mario.tile(16,4)
+  ne = mario.tile(17,4)
+  cw = mario.tile(15,5)
+  cc = mario.tile(16,5)
+  ce = mario.tile(17,5)
+  sw = mario.tile(15,6)
+  sc = mario.tile(16,6)
+  se = mario.tile(17,6)
+}
+
+tilemap pinkround {
+  nw = mario.tile(18,4)
+  nc = mario.tile(19,4)
+  ne = mario.tile(20,4)
+  cw = mario.tile(18,5)
+  cc = mario.tile(19,5)
+  ce = mario.tile(20,5)
+  sw = mario.tile(18,6)
+  sc = mario.tile(19,6)
+  se = mario.tile(20,6)
+}
+
+tilemap blue2 {
+  nw = mario.tile(21,4)
+  nc = mario.tile(22,4)
+  ne = mario.tile(23,4)
+  cw = mario.tile(21,5)
+  cc = mario.tile(22,5)
+  ce = mario.tile(23,5)
+  sw = mario.tile(21,6)
+  sc = mario.tile(22,6)
+  se = mario.tile(23,6)
+}
+
+tilemap gray1 {
+  nw = mario.tile(24,4)
+  nc = mario.tile(25,4)
+  ne = mario.tile(26,4)
+  cw = mario.tile(24,5)
+  cc = mario.tile(25,5)
+  ce = mario.tile(26,5)
+  sw = mario.tile(24,6)
+  sc = mario.tile(25,6)
+  se = mario.tile(26,6)
+}
+
+tilemap yellowish {
+  nw = mario.tile(27,4)
+  nc = mario.tile(28,4)
+  ne = mario.tile(29,4)
+  cw = mario.tile(27,5)
+  cc = mario.tile(28,5)
+  ce = mario.tile(29,5)
+  sw = mario.tile(27,6)
+  sc = mario.tile(28,6)
+  se = mario.tile(29,6)
+}
+
+tilemap orangeish {
+  nw = mario.tile(0,7)
+  nc = mario.tile(1,7)
+  ne = mario.tile(2,7)
+  cw = mario.tile(0,8)
+  cc = mario.tile(1,8)
+  ce = mario.tile(2,8)
+  sw = mario.tile(0,9)
+  sc = mario.tile(1,9)
+  se = mario.tile(2,9)
+}
+
+tilemap grayrock {
+  nw = mario.tile(3,7)
+  nc = mario.tile(4,7)
+  ne = mario.tile(5,7)
+  cw = mario.tile(3,8)
+  cc = mario.tile(4,8)
+  ce = mario.tile(5,8)
+  sw = mario.tile(3,9)
+  sc = mario.tile(4,9)
+  se = mario.tile(5,9)
+}
+
+tilemap grass {
+  nw = mario.tile(10,7)
+  nc = mario.tile(11,7)
+  ne = mario.tile(12,7)
+  cw = mario.tile(10,8)
+  cc = mario.tile(11,8)
+  ce = mario.tile(12,8)
+  sw = mario.tile(10,9)
+  sc = mario.tile(11,9)
+  se = mario.tile(12,9)
+}
+
+tilemap icee {
+  nw = mario.tile(13,7)
+  nc = mario.tile(14,7)
+  ne = mario.tile(15,7)
+  cw = mario.tile(13,8)
+  cc = mario.tile(14,8)
+  ce = mario.tile(15,8)
+  sw = mario.tile(13,9)
+  sc = mario.tile(14,9)
+  se = mario.tile(15,9)
+}
+
+tilemap orangepipe {
+  nw = mario.tile(17,7)
+  nc = mario.tile(18,7)
+  ne = mario.tile(18,7)
+  cw = mario.tile(17,8)
+  cc = mario.tile(18,8)
+  ce = mario.tile(18,8)
+  sw = mario.tile(17,9)
+  sc = mario.tile(18,9)
+  se = mario.tile(18,9)
+}
+
+tilemap greenpipe {
+  nw = mario.tile(19,7)
+  nc = mario.tile(20,7)
+  ne = mario.tile(20,7)
+  cw = mario.tile(19,8)
+  cc = mario.tile(20,8)
+  ce = mario.tile(20,8)
+  sw = mario.tile(19,9)
+  sc = mario.tile(20,9)
+  se = mario.tile(20,9)
+}
+
+tilemap graypipe {
+  nw = mario.tile(21,7)
+  nc = mario.tile(22,7)
+  ne = mario.tile(22,7)
+  cw = mario.tile(21,8)
+  cc = mario.tile(22,8)
+  ce = mario.tile(22,8)
+  sw = mario.tile(21,9)
+  sc = mario.tile(22,9)
+  se = mario.tile(22,9)
+}
+
+tilemap soil1 {
+  nw = mario.tile(24,0)
+  nc = mario.tile(25,0)
+  ne = mario.tile(26,0)
+  cw = mario.tile(24,1)
+  cc = mario.tile(25,1)
+  ce = mario.tile(26,1)
+  sw = mario.tile(24,1)
+  sc = mario.tile(25,1)
+  se = mario.tile(26,1)
+}
+
+tilemap soil2 {
+  nw = mario.tile(24,2)
+  nc = mario.tile(25,2)
+  ne = mario.tile(26,2)
+  cw = mario.tile(24,3)
+  cc = mario.tile(25,3)
+  ce = mario.tile(26,3)
+  sw = mario.tile(24,3)
+  sc = mario.tile(25,3)
+  se = mario.tile(26,3)
+}
+
+tilemap soil3 {
+  nw = mario.tile(21,2)
+  nc = mario.tile(22,2)
+  ne = mario.tile(23,2)
+  cw = mario.tile(21,3)
+  cc = mario.tile(22,3)
+  ce = mario.tile(23,3)
+  sw = mario.tile(21,3)
+  sc = mario.tile(22,3)
+  se = mario.tile(23,3)
+}
+
+tilemap soil4 {
+  nw = mario.tile(27,2)
+  nc = mario.tile(28,2)
+  ne = mario.tile(29,2)
+  cw = mario.tile(27,3)
+  cc = mario.tile(28,3)
+  ce = mario.tile(29,3)
+  sw = mario.tile(27,3)
+  sc = mario.tile(28,3)
+  se = mario.tile(29,3)
+}
+
+tilemap soil5 {
+  nw = mario.tile(18,2)
+  nc = mario.tile(19,2)
+  ne = mario.tile(20,2)
+  cw = mario.tile(18,3)
+  cc = mario.tile(19,3)
+  ce = mario.tile(20,3)
+  sw = mario.tile(18,3)
+  sc = mario.tile(19,3)
+  se = mario.tile(20,3)
+}
+
+tilemap soil6 {
+  nw = mario.tile(15,2)
+  nc = mario.tile(16,2)
+  ne = mario.tile(17,2)
+  cw = mario.tile(15,3)
+  cc = mario.tile(16,3)
+  ce = mario.tile(17,3)
+  sw = mario.tile(15,3)
+  sc = mario.tile(16,3)
+  se = mario.tile(17,3)
+}
+
+tilemap soil7 {
+  nw = mario.tile(12,2)
+  nc = mario.tile(13,2)
+  ne = mario.tile(14,2)
+  cw = mario.tile(12,3)
+  cc = mario.tile(13,3)
+  ce = mario.tile(14,3)
+  sw = mario.tile(12,3)
+  sc = mario.tile(13,3)
+  se = mario.tile(14,3)
+}
+
+tilemap soil8 {
+  nw = mario.tile(9,2)
+  nc = mario.tile(10,2)
+  ne = mario.tile(11,2)
+  cw = mario.tile(9,3)
+  cc = mario.tile(10,3)
+  ce = mario.tile(11,3)
+  sw = mario.tile(9,3)
+  sc = mario.tile(10,3)
+  se = mario.tile(11,3)
+}
+
+tilemap soil9 {
+  nw = mario.tile(6,2)
+  nc = mario.tile(7,2)
+  ne = mario.tile(8,2)
+  cw = mario.tile(6,3)
+  cc = mario.tile(7,3)
+  ce = mario.tile(8,3)
+  sw = mario.tile(6,3)
+  sc = mario.tile(7,3)
+  se = mario.tile(8,3)
+}
+
+tilemap soil10 {
+  nw = mario.tile(3,2)
+  nc = mario.tile(4,2)
+  ne = mario.tile(5,2)
+  cw = mario.tile(3,3)
+  cc = mario.tile(4,3)
+  ce = mario.tile(5,3)
+  sw = mario.tile(3,3)
+  sc = mario.tile(4,3)
+  se = mario.tile(5,3)
+}
+
+tilemap soil11 {
+  nw = mario.tile(0,2)
+  nc = mario.tile(1,2)
+  ne = mario.tile(2,2)
+  cw = mario.tile(0,3)
+  cc = mario.tile(1,3)
+  ce = mario.tile(2,3)
+  sw = mario.tile(0,3)
+  sc = mario.tile(1,3)
+  se = mario.tile(2,3)
+}
+
+tilemap soil12 {
+  nw = mario.tile(9,7)
+  nc = mario.tile(9,7)
+  ne = mario.tile(9,7)
+  cw = mario.tile(9,8)
+  cc = mario.tile(9,8)
+  ce = mario.tile(9,8)
+  sw = mario.tile(9,9)
+  sc = mario.tile(9,9)
+  se = mario.tile(9,9)
+}
+
+tilemap soil13 {
+  nw = mario.tile(23,0)
+  nc = mario.tile(23,0)
+  ne = mario.tile(23,0)
+  cw = mario.tile(23,1)
+  cc = mario.tile(23,1)
+  ce = mario.tile(23,1)
+  sw = mario.tile(23,2)
+  sc = mario.tile(23,2)
+  se = mario.tile(23,2)
+}
+
+tilemap clouds1 {
+  nw = mario.tile(0,1)
+  nc = mario.tile(1,1)
+  ne = mario.tile(2,1)
+  cw = mario.tile(0,1)
+  cc = mario.tile(1,1)
+  ce = mario.tile(2,1)
+  sw = mario.tile(0,1)
+  sc = mario.tile(1,1)
+  se = mario.tile(2,1)
+}
+
+tilemap clouds2 {
+  nw = mario.tile(18,1)
+  nc = mario.tile(19,1)
+  ne = mario.tile(20,1)
+  cw = mario.tile(18,1)
+  cc = mario.tile(19,1)
+  ce = mario.tile(20,1)
+  sw = mario.tile(18,1)
+  sc = mario.tile(19,1)
+  se = mario.tile(20,1)
+}
+
+tilemap plateform1 {
+  nw = mario.tile(3,1)
+  nc = mario.tile(4,1)
+  ne = mario.tile(5,1)
+  cw = mario.tile(3,1)
+  cc = mario.tile(4,1)
+  ce = mario.tile(5,1)
+  sw = mario.tile(3,1)
+  sc = mario.tile(4,1)
+  se = mario.tile(5,1)
+}
+
+tilemap plateform2 {
+  nw = mario.tile(6,1)
+  nc = mario.tile(7,1)
+  ne = mario.tile(8,1)
+  cw = mario.tile(6,1)
+  cc = mario.tile(7,1)
+  ce = mario.tile(8,1)
+  sw = mario.tile(6,1)
+  sc = mario.tile(7,1)
+  se = mario.tile(8,1)
+}
+
+tilemap plateform3 {
+  nw = mario.tile(9,1)
+  nc = mario.tile(10,1)
+  ne = mario.tile(11,1)
+  cw = mario.tile(9,1)
+  cc = mario.tile(10,1)
+  ce = mario.tile(11,1)
+  sw = mario.tile(9,1)
+  sc = mario.tile(10,1)
+  se = mario.tile(11,1)
+}
+
+tilemap plateform4 {
+  nw = mario.tile(12,1)
+  nc = mario.tile(13,1)
+  ne = mario.tile(14,1)
+  cw = mario.tile(12,1)
+  cc = mario.tile(13,1)
+  ce = mario.tile(14,1)
+  sw = mario.tile(12,1)
+  sc = mario.tile(13,1)
+  se = mario.tile(14,1)
+}
+
+tilemap plateform5 {
+  nw = mario.tile(15,1)
+  nc = mario.tile(16,1)
+  ne = mario.tile(17,1)
+  cw = mario.tile(15,1)
+  cc = mario.tile(16,1)
+  ce = mario.tile(17,1)
+  sw = mario.tile(15,1)
+  sc = mario.tile(16,1)
+  se = mario.tile(17,1)
+}
+
+tilemap canon1 {
+  xx = mario.tile(30,2)
+  nw = mario.tile(30,2)
+  nc = mario.tile(30,2)
+  ne = mario.tile(30,2)
+  cw = mario.tile(30,3)
+  cc = mario.tile(30,3)
+  ce = mario.tile(30,3)
+  sw = mario.tile(30,4)
+  sc = mario.tile(30,4)
+  se = mario.tile(30,4)
+}
+
+tilemap pole1 {
+  xx = mario.tile(8,7)
+  nw = mario.tile(8,7)
+  nc = mario.tile(8,7)
+  ne = mario.tile(8,7)
+  cw = mario.tile(8,8)
+  cc = mario.tile(8,8)
+  ce = mario.tile(8,8)
+  sw = mario.tile(8,9)
+  sc = mario.tile(8,9)
+  se = mario.tile(8,9)
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; TILES
+; properties :
+;
+; walljump = 0,1
+; desc = string
+; canbreak = 0,1
+; tile = tilemap.tile(x,y)
+; tilemap = tilemap
+; editor = 0,1
+; canclimb = 0,1
+; collision = tblrx (top bottom left right none)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+tile blocker {
+
+  desc = blocker
+  canbreak = 0
+  tile = 0
+  editor = 0
+}
+
+tile block1 {
+  desc = block1
+  tile = mario.tile(0,0)
+}
+
+tile block2 {
+  desc = floor
+  tile = mario.tile(1,0)
+}
+
+tile block3 {
+  desc = blue
+  tile = mario.tile(2,0)
+}
+
+tile block4 {
+  desc = wood
+  tile = mario.tile(3,0)
+}
+
+tile block5 {
+  desc = blue thing
+  tile = mario.tile(4,0)
+}
+
+tile soil1 {
+  desc = Soil 1
+  tilemap = soil1
+}
+
+tile soil2 {
+  desc = Soil 2
+  tilemap = soil2
+}
+
+tile soil3 {
+  desc = Soil 3
+  tilemap = soil3
+}
+
+tile soil4 {
+  desc = Soil 4
+  tilemap = soil4
+}
+
+tile soil5 {
+  desc = Soil 5
+  tilemap = soil5
+}
+
+tile soil6 {
+  desc = Soil 6
+  tilemap = soil6
+}
+
+tile soil7 {
+  desc = Soil 7
+  tilemap = soil7
+}
+
+tile soil8 {
+  desc = Soil 8
+  tilemap = soil8
+}
+
+tile soil9 {
+  desc = Soil 9
+  tilemap = soil9
+}
+
+tile soil10 {
+  desc = Soil 10
+  tilemap = soil10
+}
+
+tile soil11 {
+  desc = Soil 11
+  tilemap = soil11
+}
+
+tile soil12 {
+  desc = Soil 12
+  tilemap = soil12
+}
+
+tile soil13 {
+  desc = Soil 13
+  tilemap = soil13
+}
+
+tile cloud1 {
+  desc = cloud 1
+  tile = mario.tile(5,0)
+}
+
+tile cloud2 {
+  desc = cloud 2
+  tile = mario.tile(6,0)
+}
+
+tile clouds1 {
+  desc = clouds 1
+  tilemap = clouds1
+}
+
+tile clouds2 {
+  desc = clouds 2
+  tilemap = clouds2
+}
+
+tile plateform1 {
+  desc = Plateform 1
+  tilemap = plateform1
+}
+
+tile plateform2 {
+  desc = Plateform 2
+  tilemap = plateform2
+}
+
+tile plateform3 {
+  desc = Plateform 3
+  tilemap = plateform3
+}
+
+tile plateform4 {
+  desc = Plateform 4
+  tilemap = plateform4
+}
+
+tile plateform5 {
+  desc = Plateform 5
+  tilemap = plateform5
+}
+
+tile canon1 {
+  desc = Canon 1
+  tilemap = canon1
+}
+
+tile pole1 {
+  desc = Pole 1
+  tilemap = pole1
+}
+
+tile ice1 {
+  desc = ice 1
+  tile = mario.tile(7,0)
+}
+
+tile ice2 {
+  desc = ice 2
+  tile = mario.tile(8,0)
+}
+
+tile green {
+  desc = Green (Passable)
+  tilemap = green
+  collision = t
+}
+
+tile white {
+  desc = White (Passable)
+  tilemap = white
+  collision = t
+}
+
+tile orange {
+  desc = Orange (Passable)
+  tilemap = orange
+  collision = t
+}
+
+tile blue {
+  desc = Blue (Passable)
+  tilemap = blue
+  collision = t
+}
+
+tile brown {
+  desc = Brown (Passable)
+  tilemap = brown
+  collision = t
+}
+
+tile pink {
+  desc = Pink (Passable)
+  tilemap = pink
+  collision = t
+}
+
+tile pinkround {
+  desc = Pink 2 (Passable)
+  tilemap = pinkround
+  collision = t
+}
+
+tile blue2 {
+  desc = Blue 2 (Passable)
+  tilemap = blue2
+  collision = t
+}
+
+tile gray1 {
+  desc = Gray sand
+  tilemap = gray1
+}
+
+tile yellowish {
+  desc = Yellow sand
+  tilemap = yellowish
+}
+
+tile orangeish {
+  desc = Orange sand
+  tilemap = orangeish
+}
+
+tile grayrock {
+  desc = Gray rock
+  tilemap = grayrock
+}
+
+tile grass {
+  desc = Grass rock
+  tilemap = grass
+}
+
+tile icee {
+  desc = Ice rock
+  tilemap = icee
+}
+
+tile orangepipe {
+  desc = Orange pipe
+  tilemap = orangepipe
+}
+
+tile greenpipe {
+  desc = Green pipe
+  tilemap = greenpipe
+}
+
+tile graypipe {
+  desc = Gray pipe
+  tilemap = graypipe
+}
+
+tile music1 {
+  desc = Music box 1
+  tile = mario.tile(8,10)
+  anim = music1
+  on_hit_bottom = bounce_block 
+}
+
+tile music2 {
+  desc = Music box 2
+  tile = mario.tile(12,10)
+  anim = music2
+  on_hit_bottom = bounce_block 
+}
+
+tile blueblock {
+  desc = Blue block
+  tile = mario.tile(4,10)
+  anim = blueblock
+}
+
+tile lava {
+  desc = Lava
+  tile = mario.tile(0,10)
+  anim = lava
+}
+
+tile goldblock {
+  desc = Gold block
+  tile = mario.tile(20,10)
+  anim = goldblock
+  
+}
+
+tile coinbox {
+  desc = Coin box
+  tile = mario.tile(16,10)
+  anim = coinbox
+  on_hit_bottom = bounce_block 
+}
+
+tile coin {
+  desc = coin
+  tile = mario.tile(24,10)
+  collision = x
+  anim = coin
+  on_touch = collect_coin
+}
