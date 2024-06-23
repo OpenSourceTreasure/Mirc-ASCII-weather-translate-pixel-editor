@@ -67,3 +67,13 @@ You can make the bot join any channel you want using the irc `/invite` commmand,
 
 If you don't want the bot to be in your channel anymore you can simply use the `/kick` command with it, it will forget your channel and won't come back unless reinvited.
 
+I use this on a self-hosted irc server. You can:
+
+✅ Play Mario 
+
+✅ Translate
+
+✅ Get the weather
+
+✅ Use a pixel editor
+
