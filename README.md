@@ -21,6 +21,7 @@ Where a directory refers to "kenny" instead of "name" - same idea, change it to 
 # irc-translate-bot
 An irc translation bot using Google Translate, works for every language.
 
+![screenshot](mirc-bot.png)
 ## Installation
 
 First, clone this repository and cd into it:
