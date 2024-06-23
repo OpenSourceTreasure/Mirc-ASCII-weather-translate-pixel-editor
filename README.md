@@ -1,10 +1,9 @@
 This is a collection of a few irc scripts and a bot that work together.
-Place the files in the correct directory
-Install node.js in the directory where the bot goes
+Install the bot based on the below instructions.
+Place the scripts files in the correct directory
 Load your irc server - I used unrealircd.
 Load Mirc. 
 Go to the dir where the bot is and open Terminal. Type: node index.js
-
 
 Usage:
 
@@ -24,7 +23,7 @@ This is what it should look like when you use it:
 
 # irc-translate-bot
 An irc translation bot using Google Translate, works for every language.
-
+It it located here - https://github.com/forerosantiago/irc-translate-bot
 
 ## Installation
 
