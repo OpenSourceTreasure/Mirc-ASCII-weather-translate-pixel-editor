@@ -10,6 +10,8 @@ Usage:
 
 -es words (Google Translate - change es for any two letter language code and "words" for what you want to translate!
 
+Go to Commands in Mirc for Mario and Pixel Editor
+
 Where a directory refers to "kenny" instead of "name" - same idea, change it to whatever it is on your end...
 
 # irc-translate-bot
@@ -54,3 +56,4 @@ The command is the iso code for the desired language, a list of all the iso lang
 You can make the bot join any channel you want using the irc `/invite` commmand, the bot will remember it and join again if it gets disconnected.
 
 If you don't want the bot to be in your channel anymore you can simply use the `/kick` command with it, it will forget your channel and won't come back unless reinvited.
+
