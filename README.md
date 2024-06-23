@@ -1,3 +1,12 @@
+This is a collection of a few irc scripts and a bot that work together.
+Place the files in the correct directory
+Install node.js in the directory where the bot goes
+
+Usage:
+!weather - for the weather
+/pe - pixel editor
+-es words (Google Translate - change es for any two letter language code and "words" for what you want to translate!
+
 Where a directory refers to "kenny" instead of "name" - same idea, change it to whatever it is on your end...
 
 # irc-translate-bot
