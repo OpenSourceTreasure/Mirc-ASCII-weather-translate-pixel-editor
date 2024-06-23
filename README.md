@@ -12,7 +12,7 @@ Usage:
 
 /pe - pixel editor
 
--es words (Google Translate - change es for any two letter language code and "words" for what you want to translate!
+-es words (Google Translate - change es for any two letter language code and "words" for what you want to translate!)
 
 Go to Commands in Mirc for Mario and Pixel Editor
 
