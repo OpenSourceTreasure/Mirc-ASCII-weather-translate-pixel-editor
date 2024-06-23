@@ -18,10 +18,14 @@ Go to Commands in Mirc for Mario and Pixel Editor
 
 Where a directory refers to "kenny" instead of "name" - same idea, change it to whatever it is on your end...
 
+This is what it should look like when you use it:
+
+![screenshot](mirc-bot.png)
+
 # irc-translate-bot
 An irc translation bot using Google Translate, works for every language.
 
-![screenshot](mirc-bot.png)
+
 ## Installation
 
 First, clone this repository and cd into it:
