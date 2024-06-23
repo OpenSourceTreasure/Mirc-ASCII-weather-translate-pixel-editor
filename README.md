@@ -13,7 +13,7 @@ The channels default to #Ken - you may change that in the channels.js files
 
 Usage:
 
-!weather - for the weather
+!weather - ASCII weather
 
 /pe - pixel editor
 
