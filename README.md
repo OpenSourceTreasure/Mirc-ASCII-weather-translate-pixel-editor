@@ -46,8 +46,8 @@ npm install
 Edit the `config.json` file:
 ```
 {
-    "nick": "Translator",
-    "server": "irc.planetofnix.com"
+    "nick": "bot",
+    "server": "127.0.0.1"
 }
 ```
 
