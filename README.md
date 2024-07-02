@@ -1,6 +1,6 @@
 This is a collection of a few irc scripts and a bot that work together.
 Install the bot based on the below instructions.
-Place the scripts files in the correct directory
+Place the scripts files in the correct directory.
 Load your irc server - I used unrealircd.
 Load Mirc. 
 Go to the dir where the bot is and open Terminal. Type: node index.js
