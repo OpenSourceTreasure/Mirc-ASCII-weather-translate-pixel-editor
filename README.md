@@ -88,4 +88,5 @@ I use this on a self-hosted irc server. You can:
 
 🎸 Bonus - weather-no-menu.html displays the ASCII weather on an html page. No dependencies. I think it looks cool:
 
+![screenshot](weather.png)
 
