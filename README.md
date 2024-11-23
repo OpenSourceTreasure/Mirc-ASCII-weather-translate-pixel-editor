@@ -11,9 +11,9 @@ This is a collection of a few irc scripts and a bot that work together.
 ✅ Load Mirc
 
 ✅ Go to the dir where the bot is and open Terminal. Type: node index.js
-In C:\Users\name\AppData\Roaming\mIRC\scripts\irc-translate-bot-main - change Boca Raton to whatever city you'd like.
+In C:\Users\name\AppData\Roaming\mIRC\scripts\irc-translate-bot-main - change Boca Raton to whatever city you'd like
 
-✅The channels default to #Ken - you may change that in the channels.js files.
+✅The channels default to #Ken - you may change that in the channels.js files
 
 💡 Quick Install via Zip
 
