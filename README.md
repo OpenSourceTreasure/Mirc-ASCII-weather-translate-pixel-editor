@@ -17,7 +17,7 @@ In C:\Users\name\AppData\Roaming\mIRC\scripts\irc-translate-bot-main - change Bo
 
 💡 Quick Install via Zip
 
-✅ Download both Zip files and put them where it says. Read on, and learn what the capabilities are, and of course the code (non-zip) version.
+✔ Download both Zip files and put them where it says. Read on, and learn what the capabilities are, and of course the code (non-zip) version.
 
 Usage:
 
