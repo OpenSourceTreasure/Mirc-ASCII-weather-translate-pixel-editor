@@ -92,6 +92,8 @@ I use this on a self-hosted irc server. You can:
 
 ✅ Get the weather
 
+Update - Now you can chat to the channel via the bot, which is in terminal.
+
 ✅ Use a pixel editor
 
 🎸 Bonus - weather-no-menu.html displays the ASCII weather on an html page. No dependencies. I think it looks cool:
